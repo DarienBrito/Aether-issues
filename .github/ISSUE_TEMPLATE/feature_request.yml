@@ -1,0 +1,48 @@
+name: Feature Request
+description: Suggest an improvement or new feature
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea for Aether? We'd love to hear it.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Motivation
+      description: What problem does this solve, or what workflow does it improve?
+      placeholder: I often need to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How do you imagine this working?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of Aether does this relate to?
+      options:
+        - Plugin UI
+        - Audio streaming
+        - TouchDesigner integration
+        - Installation / setup
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you tried any workarounds?
+    validations:
+      required: false

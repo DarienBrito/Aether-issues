@@ -1,0 +1,116 @@
+name: Bug Report
+description: Report a problem with Aether
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue. Please fill in the details below so we can reproduce and fix it.
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Windows 10
+        - Windows 11
+        - macOS (Intel)
+        - macOS (Apple Silicon)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: plugin-format
+    attributes:
+      label: Plugin Format
+      options:
+        - VST3 (Windows)
+        - AudioUnit (macOS)
+    validations:
+      required: true
+
+  - type: input
+    id: daw
+    attributes:
+      label: DAW
+      description: Name and version (e.g. Ableton Live 12.1, Bitwig 5.2)
+      placeholder: Ableton Live 12.1
+    validations:
+      required: true
+
+  - type: input
+    id: td-version
+    attributes:
+      label: TouchDesigner Version
+      description: e.g. 2024.11000
+      placeholder: "2024.11000"
+    validations:
+      required: false
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Aether Version
+      description: Shown in the plugin UI or filename
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: buffer-size
+    attributes:
+      label: Buffer Size
+      description: The buffer size set in Aether
+      options:
+        - "512"
+        - "1024"
+        - "2048"
+        - Not sure
+    validations:
+      required: false
+
+  - type: dropdown
+    id: channel-mode
+    attributes:
+      label: Channel Mode
+      options:
+        - Stereo
+        - Mono Left
+        - Mono Right
+        - Mono Mix
+        - Not sure
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem. What did you expect to happen?
+      placeholder: |
+        When I load Aether on a track and set the stream name to "kick",
+        the Shared Mem In CHOP in TouchDesigner doesn't pick up the signal...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Minimal steps to trigger the issue
+      placeholder: |
+        1. Open DAW, create audio track
+        2. Load Aether on the track
+        3. Set stream name to "kick"
+        4. In TouchDesigner, add Shared Mem In CHOP with segment name "kick"
+        5. Play audio — no signal appears
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Screenshots, crash logs, or anything else that might help
+    validations:
+      required: false
