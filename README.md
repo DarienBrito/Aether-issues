@@ -1,3 +1,5 @@
+![Aether: stream audio from your DAW to TouchDesigner via shared memory](assets/gumroad-header.png)
+
 # Aether Issue Tracker
 
 This repository is the public issue tracker for **Aether**, a shared memory audio bridge plugin for DAWs and TouchDesigner.
@@ -47,9 +49,10 @@ Prefill is measured in frames, so wall-clock latency depends on your session's s
 
 To measure your actual latency, attach an Info CHOP to Aether In: `buffered / sample rate` gives seconds.
 
-## Links
+## Download
 
-- [Get Aether](https://darienbrito.gumroad.com/l/aether) (Gumroad)
+- [Get Aether on Gumroad](https://darienbrito.gumroad.com/l/aether)
+- [Support development on Patreon](https://www.patreon.com/cw/darienbrito)
 
 ## Note
 
