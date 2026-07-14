@@ -25,6 +25,7 @@ body:
       label: Plugin Format
       options:
         - VST3 (Windows)
+        - VST3 (macOS)
         - AudioUnit (macOS)
     validations:
       required: true
@@ -51,21 +52,17 @@ body:
     id: plugin-version
     attributes:
       label: Aether Version
-      description: Shown in the plugin UI or filename
-      placeholder: "1.0.0"
+      description: Shown in the plugin footer or installer filename
+      placeholder: "1.1.6"
     validations:
       required: true
 
-  - type: dropdown
-    id: buffer-size
+  - type: input
+    id: prefill
     attributes:
-      label: Buffer Size
-      description: The buffer size set in Aether
-      options:
-        - "512"
-        - "1024"
-        - "2048"
-        - Not sure
+      label: Aether In Prefill
+      description: The Prefill value on the Aether In CHOP, if you changed it (default 2048)
+      placeholder: "2048"
     validations:
       required: false
 
