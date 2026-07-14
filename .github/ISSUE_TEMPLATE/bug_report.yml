@@ -53,7 +53,7 @@ body:
     attributes:
       label: Aether Version
       description: Shown in the plugin footer or installer filename
-      placeholder: "1.1.6"
+      placeholder: "1.1.7"
     validations:
       required: true
 

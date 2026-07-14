@@ -36,12 +36,14 @@ Plugin settings:
 
 Latency is set on the receiving side by the **Prefill** parameter of the Aether In CHOP (the cushion of frames it keeps buffered). The plugin adds no buffering of its own.
 
-| Prefill | Latency at 48 kHz | Use case |
-|---------|-------------------|----------|
-| 2048    | ~43 ms            | Robust default, survives TD frame stalls |
-| 1024    | ~21 ms            | Low latency for steady 60 fps networks |
-| 512     | ~11 ms            | Needs a consistently steady TD frame rate |
-| 256     | ~5 ms             | Minimum, underrun-prone |
+Prefill is measured in frames, so wall-clock latency depends on your session's sample rate: `latency in seconds = Prefill / sample rate`. The stream always runs at whatever rate your DAW is set to, and the plugin's help overlay (Latency tab) computes these values live for your current session.
+
+| Prefill | At 44.1 kHz | At 48 kHz | Use case |
+|---------|-------------|-----------|----------|
+| 2048    | ~46 ms      | ~43 ms    | Robust default, survives TD frame stalls |
+| 1024    | ~23 ms      | ~21 ms    | Low latency for steady 60 fps networks |
+| 512     | ~12 ms      | ~11 ms    | Needs a consistently steady TD frame rate |
+| 256     | ~6 ms       | ~5 ms     | Minimum, underrun-prone |
 
 To measure your actual latency, attach an Info CHOP to Aether In: `buffered / sample rate` gives seconds.
 
